@@ -267,7 +267,7 @@
    (animate-slide
     (para "Then, you may have learned about lists in a programming class, and tried to prove some property:")
     'next
-    (draw-expr `(forall _l in (app List _T) (app _P _n)))
+    (draw-expr `(forall _l in (app List _T) (app _P _l)))
     'next
     (para "and learned to prove it by induction:")
     'next
@@ -959,7 +959,7 @@
    (lambda (a b c)
      (vc-append 60
                 (para (hbl-append (coinductive "Coinductive") (t " types are ")
-                                  (coinductive "final") (t " algebras:")))
+                                  (coinductive "final co") (t "algebras:")))
       (coalgebra)
       (cellophane (para "of functors like:") a)
       (para
@@ -1051,7 +1051,7 @@
     (para "Sadly, this does not capture everything we consider equal! For instance:")
     (draw-expr `(def-neq (+ One _n) (+ _n One)))
     'next
-    (para "Solution: judgmental equality")
+    (para "Solution: propositional equality")
     'next
     (inference
      (draw-expr `(prop-eq _x _x))
